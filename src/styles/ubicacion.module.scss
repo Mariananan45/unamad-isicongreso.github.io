@@ -1,0 +1,66 @@
+@import "./Utils/constants.scss";
+@import "./Utils/_layouts.scss";
+@import "./utils/blocks";
+
+.ubicacion {
+    @include section();
+    flex-direction: column;
+    
+    .subtitle{
+        text-align: center;
+    }
+
+    h2 {
+        @include block-title-center;
+    }
+
+    .container {
+        margin: 24px;
+    }
+}
+
+@media (min-width: map-get($breakpoints, tablet)) {
+    .ubicacion {
+        @include section('tablet');
+    }
+}
+
+@media (min-width: map-get($breakpoints, laptop)) {
+    .ubicacion {
+        @include section('laptop');   
+    }
+
+    .subtitle {
+        margin-bottom: 24px;
+    }
+    
+    .mapa {
+        margin: 24px;
+        flex: 1;
+    }
+
+    .content_container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .container {
+        flex: 1;
+        flex-direction: column;
+        display: flex;
+        gap: 16px;
+    }
+}
+
+@media (min-width: map-get($breakpoints, desktop)) {
+    .ubicacion {
+        @include section('desktop');
+    }
+
+    .content_container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}
